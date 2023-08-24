@@ -1,0 +1,43 @@
+<template id = "additional-configuration-template">
+    <style>
+        #categoryFilter {
+            font-size: 18px; /* Adjust the font size as needed */
+            padding: 10px;   /* Adjust the padding as needed */
+            width: 300px;    /* Adjust the width as needed */
+            margin-bottom: 10px; /* Add space at the bottom of the category filter */
+        }
+        body {
+            font-family: Arial, sans-serif; /* Use Arial as a fallback font */
+        }
+        
+        #applyButton,
+        #clearButton {
+            background-color: rgb(79, 79, 219);
+            color: white;
+        }
+        
+        #filterOutput {
+            margin-top: 10px; /* Add space before the output */
+        }
+        
+        
+        /* Custom CSS for the Text Filter */
+        #textFilter {
+            font-size: 16px; /* Adjust the font size as needed */
+            padding: 10px;   /* Adjust the padding as needed */
+            width: 200px;    /* Adjust the width as needed */
+            margin-bottom: 10px; 
+        }
+        </style>
+<body>
+    <form id="filterForm">
+        <select id="categoryFilter" name="categoryFilter"></select>
+        <br>
+        <input type="text" id="textFilter" name="textFilter">
+        <br>
+        <input type="submit" id="applyButton" value="+">
+        <input type="button" id="clearButton" value="-">
+    </form>
+    <div id="filterOutput"></div>
+</body>
+</template>
