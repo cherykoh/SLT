@@ -1,0 +1,44 @@
+<template id="plot-card">
+    <style>
+        .main-style {
+            font-family: 'Klavika', sans-serif;
+            color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            position: relative;
+        }
+        .btn {
+            background-color: lightgrey;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .btn:hover {
+            background-color: darkgrey;
+        }
+    </style>
+    <div class="plot-card">
+        <div class="main-style">
+            <slot name="title">Default Title</slot>
+        </div>
+        <div class="main-style">
+            <slot name="plot">Default Plot</slot>
+        </div>
+        <div class="main-style">
+            <slot name="summary">Default Summary</slot>
+        </div>
+        <div class="main-style">
+            <button id="ssbtn" slot="button">
+                Save Plot as Image
+            </button>
+            <button id="statsbtn" slot="button">
+                Save Statistics as CSV
+            </button>
+        </div>
+    </div>
+</template>  
+
