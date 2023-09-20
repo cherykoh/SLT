@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .flex-container {
+    display: flex;
+    align-items: flex-start; /* To align at the top */
+}
+dynamic-plot-configuration {
+    flex: 1;  /* This will take 1 fraction of the available space */
+    max-width: 30%; /* This is just an example. You can adjust as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if content overflows */
+}
+
+box-plot-card {
+    flex: 2; /* This will take 2 fractions of the available space, making it larger */
+    max-width: 70%; /* Adjust as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if content overflows */
+}
+
+</style>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>Dynamic Plot Configuration</title>
+</head>
+<body>
+
+  <dynamic-plot-configuration id = 'plotConfig'></dynamic-plot-configuration>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#"><b>SLT App</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/slt">SLT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ate">ATE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/plots">Plots</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/configurablePlots">Configurable Plots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://ontrack-internal.amd.com/secure/CreateIssueDetails!init.jspa?pid=32712&issuetype=10402&summary=[SLT%20Bug%20-%20Plots]%20%3CProblem%20Summary%3E&description=%3CProblem%20Summary%3E&priority=2&customfield_13401=DASH-7395&components=37984">Report an Issue</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="/assets/iconmonstr-view-5.svg">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+  <plot-card></plot-card>
+
+  <!-- Include your custom element templates here -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="configurablePlots.js"></script>
+  
+</body>
+</html>
+

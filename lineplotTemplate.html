@@ -1,0 +1,130 @@
+<template id="lineplot-template">
+    <style>
+.form-control {
+    margin-top: 3px;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+label {
+            font-family: 'Klavika', sans-serif;
+            color: black;
+            position: relative;
+            font-size: 20px;
+            margin-bottom: 2px; /* Adjust this value based on your preference */
+}
+
+
+select {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    outline: 0;
+    padding: 4px;
+    border-radius: 5px;
+    min-width: 350px;
+    max-width: 350px;
+    word-wrap: normal;
+}
+input[type='text'], input[type='number'] {
+    margin-bottom: 3px;
+    margin-top: 10px;
+    outline: 0;
+    padding: 4px;
+    border-radius: 5px;
+    min-width: 350px;
+    max-width: 350px;
+    word-wrap: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    cursor: default;
+}
+.overflow-auto {
+    overflow: auto!important;
+}
+    </style>
+    <body>
+       <div class="overflow-auto">
+            <label for="xVariable">X Variable:</label>
+            <select class='form-control' id="xVariable" name="xVariable"></select>
+            <br>
+
+            <label for="yVariable">Y Variable:</label>
+            <select class='form-control' id="yVariable" name="yVariable"> </select>
+            <br>
+
+            <label for="group">Group:</label>
+            <select class='form-control' id="group" name="group"></select>
+            <br>
+
+            <label for="function">Function:</label>
+            <div class="function-container">
+                <select class='form-control' id="function" name="funcTIon">
+                    <option value="MIN">MIN</option>
+                    <option value="MAX">MAX</option>
+                    <option value="MEAN">MEAN</option>
+                    <option value="MEDIAN">MEDIAN</option>
+                    <option value="COUNT">COUNT</option>
+            </select>
+            <div style="width: 10px;"></div>
+            <br>
+
+
+
+        <!-- filter 1 -->
+        <label>Additional Configurations</label>
+        <form id="filterForm1">
+        <select class='form-control' id="categoryFilter1" name="categoryFilter1">
+            <option value="Title">Title</option>
+            <option value="XLabel">X Label</option>
+            <option value="YLabel">Y Label</option>
+        </select>
+        <input class='form-control' type="text" id="textFilter1" name="textFilter1">
+        <input type="button" id="applyButton1" value="+">
+        <input type="button" id="clearButton1" value="-">
+    </form>
+    <div id="filterOutput1"></div>
+        <br>
+        
+    <!-- filter 2 -->
+        <label>Data Filtering Configurations</label>
+        <form id="filterForm2">
+        <select class='form-control' id="categoryFilter2" name="categoryFilter2"></select>
+        <div class="filter-container">
+            <select class='form-control' id="comparisonFilter" name="comparisonFilter">
+                <option value="=">=</option>
+                <option value=">">></option>
+                <option value=">=">>=</option>
+                <option value="<"><</option>
+                <option value="<="><=</option>
+            </select>
+            <div style="width: 10px;"></div>
+
+            <input class='form-control' type="text" id="textFilter2" name="textFilter2">
+        </div>
+        <br>
+        <input type="button" id="applyButton2" value="+">
+        <input type="button" id="clearButton2" value="-">
+    </form> 
+    <div id="filterOutput2"></div>
+
+
+        </form>
+        <div id="dataOutput"></div>
+    </body>
+</template>
